@@ -29,6 +29,9 @@ def get_linkedin_jobs(request):
             }
             actor_input_playload = {
                     "linkedinSessionCookie": li_at_token,
+                    "search": "Developer",
+                    "location": "Argentina",
+                    "maxItems": 10,
                     "proxy": {
                         "useApifyProxy": True,
                         "apifyProxyGroups": ["RESIDENTIAL"],
@@ -36,25 +39,13 @@ def get_linkedin_jobs(request):
                     }
             }
             # start by executing the Actor
-            apify_run_url = f'https://api.apify.com/v2/acts/{apify_actor_id}/runs'
+            apify_run_url = f'https://api.apify.com/v2/acts/{apify_actor_id}/run-sync-get-dataset-items'
 
             print(f"Calling Apify API to start actor run (async): {apify_actor_id}")
-            run_response = requests.request("POST", apify_run_url, headers=headers, json=actor_input_playload, timeout=60)
-            
+            run_response = requests.post(apify_run_url, headers=headers, json=actor_input_playload, timeout=300)
             run_response.raise_for_status()
             
-            run_data = run_response.json()
-
-            run_id = run_data['data']['id']
-            dataset_id = run_data['data']['defaultDatasetId']
-            print(f"Actor run stated, run ID: {run_id},defaultDatasetId: {dataset_id}")
-
-            apify_get_dataset_items_url = f'https://api.apify.com/v2/datasets/{dataset_id}/items'
-            print(f"Fetching dataset items from: {dataset_id}")
-
-            dataset_items_response = requests.get(apify_get_dataset_items_url, headers=headers, timeout=120)
-            dataset_items_response.raise_for_status()
-            jobs_data = dataset_items_response.json()
+            jobs_data = run_response.json()
 
             if not jobs_data:
                 return JsonResponse({'message': 'No job offers found or Apify returned empty data.'}, status=200)
