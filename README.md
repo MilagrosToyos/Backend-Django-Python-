@@ -5,7 +5,8 @@ Recibe un token de sesión de LinkedIn ('li_at') a través de una solicitud POST
 
 Este servicio web está diseñado para manejar posibles errores como tokens invàlidos, problemas de red o timeouts, respondiendo como corresponde en cada caso.  
 
-##Estructura del Proyecto
+## Estructura del Proyecto
+```
 linkedin_scraper_project/  
 |-- venv/ #Entorno virtual con dependencias  
 |-- linkedin_scraper_project/ # Configuracion principal de Django  
@@ -25,7 +26,8 @@ linkedin_scraper_project/
 |-- .env #Archivo para variables de entorno (APIFY_API_TOKEN)  
 |-- manage.py # Línea de comandos de Django  
 |-- README.md # Este archivo  
-|__ requirements.txt # Dependencias del proyecto  
+|__ requirements.txt # Dependencias del proyecto
+```
 
 
 ## Requisitos previos
@@ -63,13 +65,14 @@ Con el servidor corriendo, en otra ventana de la terminal en la raiz del proyect
 7-1. **Activa el entorno virtual **  
 source venv/bin/activate  
 7-2. ** Ejecuta el siguiente comando `curl`**  
+```
 curl -X POST \
   http://127.0.0.1:8000/api/linkedin-jobs/ \
   -H 'Content-Type: application/json' \
   -d '{
         "li_at": "you_li_at_token_LinkedIn"
       }'
-  
+  ```
 **Respuesta esperada (Éxito)**  
 Un JSON con una lista de ofertas laborales de LinkedIn.  
 
