@@ -54,8 +54,8 @@ def get_linkedin_jobs(request):
             return JsonResponse(jobs_data, safe=False)
         except json.JSONDecodeError:
             return JsonResponse({'error': 'Invalid JSON in request body'}, status=400)
-        except requests.exceptions.RequestException as e: # <--- Simplificamos a un solo RequestException
-            # Aquí capturamos Timeout, ConnectionError, HTTPError, etc. de requests
+        except requests.exceptions.RequestException as e:
+            #Timeout, ConnectionError, HTTPError, etc. de requests
             error_message = f'Error communicating with Apify: {str(e)}'
             if isinstance(e, requests.exceptions.HTTPError):
                 error_message += f' - Status: {e.response.status_code}, Detail: {e.response.text}'
