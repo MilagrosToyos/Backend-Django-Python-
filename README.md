@@ -17,6 +17,9 @@ linkedin_scraper_project/
 |   |-- __init__.py  
 |-- jobs_api/ #Aplicacion Djando para lógica del servicio REST  
 |   |-- migrations/  
+|   |-- templates/  
+|   |   |-- jobs_api/  
+|   |   |  |-- templates.html  
 |   |-- views.py  
 |   |-- admin.py  
 |   |-- urls.py  
