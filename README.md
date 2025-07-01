@@ -77,9 +77,6 @@ curl -X POST \
 Un JSON con una lista de ofertas laborales de LinkedIn.  
 
 
-
-### aún no anda endpoint, error en url
-
 ### Mejoras futuras / consideraciones
 1. **Persistencia de datos:**  
 Los resultados de las ofertas laborales podrían guardarse en alguna base de datos, para poder consultar los datos sin tener que llamar a Apify repetidas veces.  
