@@ -78,9 +78,7 @@ Un JSON con una lista de ofertas laborales de LinkedIn.
 
 
 
-### Nota importante sobre Apify y el Actor `linkedin-jobs-scraper`:
-Durante el desarrollo y las pruebas se identificó que `apify/linkedin-jobs-scraper` es un **actor de pago/premium** dentro de la plataforma Apify, incluso al intentar ejecutarlo desde una cuenta de prueba gratuita.  
-La integración a nivel de código de Django con la API de Apify está implementada y probada, pero la obtención de datos exitosa depende de tener una cuenta en Apify `no` gratuita, por lo devuelve un error del tipo "page-not-found" desde Apify.  
+### aún no anda endpoint, error en url
 
 ### Mejoras futuras / consideraciones
 1. **Persistencia de datos:**  
