@@ -74,7 +74,9 @@ curl -X POST \
       }'
   ```
 **Respuesta esperada (Éxito)**  
-Un JSON con una lista de ofertas laborales de LinkedIn.  
+Además del Endpoint API que devuelve los trabajos en formato JSON, es posible visualizar los resultados mediante una **vista HTML responsiva** que muestra las ofertas de trabajo en tarjetas estilizadas con Bootstrap 4.4  
+Ruta del navegador:  
+`http://localhost:8000/api/linkedin-jobs/html/`   
 
 
 ### Mejoras futuras / consideraciones
