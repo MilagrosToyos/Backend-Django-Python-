@@ -53,7 +53,7 @@ pip install -r requirements.txt
 Crea un archivo con el nombre `.env` en la raíz del proyecto e insertar la línea   
 APYFY_API_TOKEN="you_API_Token_here"  
 
-5. **Ejecutar Miraciones de Django**  
+5. **Ejecutar Migraciones de Django**  
 python manage.py migrate  
 
 6. **Iniciar el Servidor de Desarrollo de Django**  
@@ -80,7 +80,7 @@ Un JSON con una lista de ofertas laborales de LinkedIn.
 
 ### Nota importante sobre Apify y el Actor `linkedin-jobs-scraper`:
 Durante el desarrollo y las pruebas se identificó que `apify/linkedin-jobs-scraper` es un **actor de pago/premium** dentro de la plataforma Apify, incluso al intentar ejecutarlo desde una cuenta de prueba gratuita.  
-La integración a nivel de código de Django con la API de Apify está implementada y probada, pero la obtención de datos exitosa depende de tener una cuenta en Apify `no` gratuita, por lo devuelve un `404 Client Error: Not Found` desde Apify.  
+La integración a nivel de código de Django con la API de Apify está implementada y probada, pero la obtención de datos exitosa depende de tener una cuenta en Apify `no` gratuita, por lo devuelve un error del tipo "page-not-found" desde Apify.  
 
 ### Mejoras futuras / consideraciones
 1. **Persistencia de datos:**  
