@@ -53,18 +53,20 @@ pip install -r requirements.txt
 Crea un archivo con el nombre `.env` en la raíz del proyecto e insertar la línea   
 APYFY_API_TOKEN="you_API_Token_here"  
 
-5. **Ejecutar Migraciones de Django**  
+5. **Configurar li_at en `views.py` para la vista HTML**  
+      En `show_works_html(request)` modificar la línea `json={"li_at": "your_li_at_token_LinkedIn"},`
+6. **Ejecutar Migraciones de Django**  
 python manage.py migrate  
 
-6. **Iniciar el Servidor de Desarrollo de Django**  
+7. **Iniciar el Servidor de Desarrollo de Django**  
 python manage.py runserver  
 y deja esta terminal abierta.  
 
-7. **Probar el Endpoint REST**  
+8. **Probar el Endpoint REST**  
 Con el servidor corriendo, en otra ventana de la terminal en la raiz del proyecto también, podés probar el endpoint de la siguiente forma:  
-7-1. **Activa el entorno virtual **  
+8-1. **Activa el entorno virtual **  
 source venv/bin/activate  
-7-2. ** Ejecuta el siguiente comando `curl`**  
+8-2. ** Ejecuta el siguiente comando `curl`**  
 ```
 curl -X POST \
   http://127.0.0.1:8000/api/linkedin-jobs/ \
@@ -73,6 +75,8 @@ curl -X POST \
         "li_at": "you_li_at_token_LinkedIn"
       }'
   ```
+
+  
 **Respuesta esperada (Éxito)**  
 Además del Endpoint API que devuelve los trabajos en formato JSON, es posible visualizar los resultados mediante una **vista HTML responsiva** que muestra las ofertas de trabajo en tarjetas estilizadas con Bootstrap 4.4  
 Ruta del navegador:  
