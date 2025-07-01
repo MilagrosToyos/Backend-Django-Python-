@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from dotenv import load_dotenv
 
-load_dotenv() 
+load_dotenv() #carga las variables de entorno al inicio
 
 from pathlib import Path
 
@@ -130,3 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #To access the environment variable
 APYFY_API_TOKEN = os.getenv('APYFY_API_TOKEN')
+APYFY_ACTOR_ID = 'bebity~linkedin-jobs-scraper'
