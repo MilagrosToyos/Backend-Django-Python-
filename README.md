@@ -39,9 +39,8 @@ linkedin_scraper_project/
 [gitclone](https://github.com/MilagrosToyos/Backend-Django-Python-.git)
 
 2. **Crear y Activar el entorno Virtual**  
-python3 -m venv venv  
-
-source venv/bin/activate  
+    python3 -m venv venv  
+    source venv/bin/activate  
 (una vez activado, deberías ver (venv) al inicio de tu prompt)
 
 3. **Instalar las dependencias**  
