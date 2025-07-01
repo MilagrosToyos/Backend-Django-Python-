@@ -67,3 +67,17 @@ def get_linkedin_jobs(request):
             return JsonResponse({'error': f'An unexpected internal server error occurred: {str(e)}'}, status=500)
     else:
         return JsonResponse({'error': 'Only POST requests are supported'}, status=405)
+    
+
+def show_works_html(request):
+    try:
+        response = requests.post(
+            'http://127.0.0.1:8000/api/linkedin-jobs/',
+            json={"li_at": "AQEDAUJ3NscA8_W6AAABlu82ZjgAAAGX6nctIU4AJEWtP9LefFgdSW6onngjeKKDHvcsL04Z3RlxMh9AmYVXQ_mCL0POaZ7QW3xsLL5SZCR8TEX82CPfZh3NtbxMoEX5bGbAjCD7yGe9CvA7qqCt47gI"},
+            timeout=300
+        )
+        response.raise_for_status()
+        jobs = response.json()
+    except:
+        jobs = []
+    return render(request, 'jobs_api/templates.html', {'jobs': jobs})
